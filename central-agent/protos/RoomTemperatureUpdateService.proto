@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service RoomTemperatureUpdateService {
+    rpc updateTemperature(SubmitRoomTemperatureUpdateRequest) returns (SubmitRoomTemperatureUpdateResponse);
+}
+
+message SubmitRoomTemperatureUpdateRequest {
+    string locationid = 1;
+    uint32 roomtemperature = 2;
+    uint32 duration = 3;
+}
+
+message SubmitRoomTemperatureUpdateResponse {
+    bool success = 1;
+    string message = 2;
+}

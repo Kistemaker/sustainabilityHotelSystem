@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service EnergyService {
+    rpc get(stream SubmitEnergyReadingRequest) returns (SubmitEnergyReadingResponse);
+}
+
+message SubmitEnergyReadingRequest {
+    string locationid = 1;
+    uint32 powerconsumption = 2;
+    uint32 timestamp = 3;
+}
+
+message SubmitEnergyReadingResponse {
+    uint32 result = 1;
+    string message = 2;
+}
